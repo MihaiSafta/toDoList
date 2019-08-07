@@ -1,6 +1,6 @@
-package persistence;
+package org.fasttrackit.persistence;
 
-import domain.ToDoItem;
+import org.fasttrackit.domain.ToDoItem;
 
 import java.io.IOException;
 import java.sql.*;

@@ -1,4 +1,4 @@
-package persistence;
+package org.fasttrackit.persistence;
 
 import java.io.IOException;
 import java.io.InputStream;

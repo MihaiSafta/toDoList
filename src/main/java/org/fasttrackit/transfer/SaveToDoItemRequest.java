@@ -1,20 +1,10 @@
-package domain;
+package org.fasttrackit.transfer;
 
 import java.time.LocalDateTime;
 
-public class ToDoItem {
-    private long id;
+public class SaveToDoItemRequest {
     private String description;
     private LocalDateTime deadline;
-    private boolean done;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getDescription() {
         return description;
@@ -32,21 +22,11 @@ public class ToDoItem {
         this.deadline = deadline;
     }
 
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
     @Override
     public String toString() {
-        return "ToDoItem{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
+        return "SaveToDoItemRequest{" +
+                "description='" + description + '\'' +
                 ", deadline=" + deadline +
-                ", done=" + done +
                 '}';
     }
 }

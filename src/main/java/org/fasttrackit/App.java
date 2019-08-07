@@ -1,10 +1,9 @@
 package org.fasttrackit;
 
-import persistence.ToDoItemRepository;
+import org.fasttrackit.persistence.ToDoItemRepository;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 
 
 public class App 
@@ -15,7 +14,7 @@ public class App
         //toDoItemRepository.deleteToDoItem(2);
         System.out.println(toDoItemRepository.getToDoItems());
 
-        toDoItemRepository.updateToDoItem(1,true);
+        toDoItemRepository.updateToDoItem(1,false);
         System.out.println(toDoItemRepository.getToDoItems());
     }
 }
