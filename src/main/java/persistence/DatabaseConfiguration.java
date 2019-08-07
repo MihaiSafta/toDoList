@@ -16,8 +16,11 @@ public class DatabaseConfiguration {
         try {
             properties.load(inputStream);
             // loading the mysql driver so that it gets registered with the DriverManager
-            Class.forName(properties.getProperty("DRIVER_CLASS"));
-           return  DriverManager.getConnection(properties.getProperty("DB_URL"),properties.getProperty("DB_USERNAME"),properties.getProperty("DB_PASSWORD"));
+            Class.forName(properties.getProperty("DB_DRIVER_CLASS"));
+           return  DriverManager.getConnection(
+                   properties.getProperty("DB_URL"),
+                   properties.getProperty("DB_USERNAME"),
+                   properties.getProperty("DB_PASSWORD"));
 
         } finally {
             if (inputStream != null) {
