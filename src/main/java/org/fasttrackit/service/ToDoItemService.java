@@ -12,7 +12,7 @@ public class ToDoItemService {
 
     private ToDoItemRepository toDoItemRepository = new ToDoItemRepository();
     //endpoint
-    protected void createToDoItem(SaveToDoItemRequest request) throws SQLException, IOException, ClassNotFoundException {
+    public void createToDoItem(SaveToDoItemRequest request) throws SQLException, IOException, ClassNotFoundException {
         System.out.println("Creating toDoItem" + request);
         //delegate db interaction to repository (single-responsibility principle)
     toDoItemRepository.createToDoItem(request.getDescription(), request.getDeadline());
