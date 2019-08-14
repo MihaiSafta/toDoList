@@ -11,7 +11,7 @@ import java.util.List;
 public class ToDoItemService {
 
     private ToDoItemRepository toDoItemRepository = new ToDoItemRepository();
-    //endpoint
+
     public void createToDoItem(SaveToDoItemRequest request) throws SQLException, IOException, ClassNotFoundException {
         System.out.println("Creating toDoItem" + request);
         //delegate db interaction to repository (single-responsibility principle)
