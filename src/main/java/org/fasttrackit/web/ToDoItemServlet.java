@@ -6,6 +6,7 @@ import org.fasttrackit.config.ObjectMapperConfiguration;
 import org.fasttrackit.domain.ToDoItem;
 import org.fasttrackit.service.ToDoItemService;
 import org.fasttrackit.transfer.SaveToDoItemRequest;
+import org.fasttrackit.transfer.UpdateToDoItemRequest;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -53,6 +54,18 @@ public class ToDoItemServlet extends HttpServlet {
         try{
             toDoItemService.deleteToDoItem(Long.parseLong(id));
         }catch (SQLException|ClassNotFoundException e){
+            resp.sendError(500,"Internal server error: " + e.getMessage());
+
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       String id = req.getParameter("id");
+        UpdateToDoItemRequest request = ObjectMapperConfiguration.getObjectMapper().readValue(req.getReader(), UpdateToDoItemRequest.class);
+        try {
+            toDoItemService.updateToDoItems(Long.valueOf(id),request);
+        } catch (SQLException | ClassNotFoundException e) {
             resp.sendError(500,"Internal server error: " + e.getMessage());
 
         }
